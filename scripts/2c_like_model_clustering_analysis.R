@@ -89,7 +89,6 @@ expData_LINE1 <- cbind(rowMeans(expData_LINE1[,c(1,2,3)]),rowMeans(expData_LINE1
 colnames(expData_LINE1) <- c("RC ASO","LINE1 ASO")
 
 genenames <- Reduce(intersect,list(nameStress=rownames(expData_stress),name2C=rownames(expData_2C),nameEmbryo=rownames(expData_Embryo),nameES=rownames(expData_ES),nameDux=rownames(expData_Dux),nameCAF1=rownames(expData_CAF1),nameKap1=rownames(expData_Kap1),nameZscan4=rownames(expData_Zscan4),nameDppa=rownames(expData_Dppa),nameLINE1=rownames(expData_LINE1)))
-
 expData <- data.matrix(cbind(expData_stress[genenames,],expData_2C[genenames,],expData_Embryo[genenames,],expData_ES[genenames,],expData_Dux[genenames,],expData_NELFA[genenames,],expData_CAF1[genenames,],expData_Kap1[genenames,],expData_Zscan4[genenames,],expData_Dppa[genenames,],expData_LINE1[genenames,]))
 expData <- expData[which(rowSums(expData)>0),]
 
